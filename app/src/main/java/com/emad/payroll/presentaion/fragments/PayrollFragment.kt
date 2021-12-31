@@ -159,9 +159,9 @@ class PayrollFragment : Fragment() {
                 addView(text2)
                 addView(text3)
                 when {
-                    (index + 1) % 2 == 0 -> setBackgroundColor(resources.getColor(R.color.yellow))
+                    (index + 1) % 2 == 0 -> setBackgroundColor(resources.getColor(R.color.light_blue))
 
-                    (index + 1) % 3 == 0 -> setBackgroundColor(resources.getColor(R.color.green))
+                    (index + 1) % 3 == 0 -> setBackgroundColor(resources.getColor(R.color.light_pink))
 
                     else -> setBackgroundColor(resources.getColor(R.color.white))
                 }
