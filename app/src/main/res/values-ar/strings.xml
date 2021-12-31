@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">راتب موظف</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="totalSalary">اجمالي المرتب :- </string>
+    <string name="benefits">الاستحقاقات</string>
+    <string name="deductions">الاستقطاعات</string>
+    <string name="salary">اجمالي المرتب</string>
+    <string name="n">م</string>
+    <string name="item">بند</string>
+    <string name="value">القيمه</string>
+</resources>

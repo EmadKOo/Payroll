@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="totalSalary">Total Salary:- </string>
-    <string name="benefits">Benefits</string>
+    <string name="benefits">Allowence</string>
     <string name="deductions">Deductions</string>
     <string name="salary">Total Salary</string>
     <string name="n">n</string>

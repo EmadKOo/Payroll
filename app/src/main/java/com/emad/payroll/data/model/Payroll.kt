@@ -72,8 +72,8 @@ data class Payroll(
     @Keep
     @Parcelize
     data class PayrollX(
-        val Allowences: List<Allowence>,
         val Date: String,
+        val Allowences: List<Allowence>,
         val Deduction: List<Deduction>,
         val Employee: List<Employee>
     ): Parcelable

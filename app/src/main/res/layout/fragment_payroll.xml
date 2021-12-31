@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_8sdp"
                 app:cardCornerRadius="@dimen/_8sdp"
+                android:onClick="@{null}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -126,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_8sdp"
                 app:cardCornerRadius="@dimen/_8sdp"
+                android:onClick="@{null}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/profileLayout">
@@ -142,6 +144,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias=".0"
+                        app:layout_constraintVertical_bias="0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -167,7 +170,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
-                            android:src="@color/blue" />
+                            android:src="@color/grey" />
 
                         <TextView
                             android:id="@+id/benefitsTV"
@@ -300,6 +303,8 @@
                         android:showDividers="middle"
                         android:stretchColumns="*"
                         android:weightSum="3"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/payrollPiechart">
 
                         <TableRow
