@@ -58,7 +58,7 @@ class PayrollFragment : Fragment() {
     }
 
     private fun handleViews(payroll: Payroll) {
-        mBinding.dateTV.setText(payroll.Payroll.Employee[0].CONTRACTSTDATE.substring(0, 10))
+        mBinding.dateTV.setText(payroll.Payroll.Date)
         Glide.with(requireContext()).load(payroll.Payroll.Employee[0].EMP_PIC)
             .error(R.drawable.ic_baseline_person_pin_24).into(mBinding.employerImage)
         setUpPiechart(mBinding.payrollPiechart)

@@ -8,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.emad.payroll.R
 import com.emad.payroll.data.model.requests.LoginRequest
 import com.emad.payroll.databinding.FragmentLoginBinding
+import com.emad.payroll.presentaion.extentions.isEnglish
 import com.emad.payroll.presentaion.viewmodels.AuthViewModel
 import com.emad.payroll.presentaion.viewmodels.PayrollViewModel
 import com.emad.payroll.utils.SharedPreferencesUtils
 import com.emad.payroll.utils.State
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
@@ -35,7 +38,17 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        login("01068962997",12345678 )
+        validateLogin()
+    }
+
+    private fun validateLogin(){
+        mBinding.loginBtn.setOnClickListener {
+            if (mBinding.phoneNumberET.text.toString().trim().equals("")||mBinding.passwprdET.text.toString().trim().equals("")){
+               showSnackBar(getString(R.string.makeSureFields))
+            }else{
+                login(mBinding.phoneNumberET.text.toString().trim(),mBinding.passwprdET.text.toString().trim().toInt())
+            }
+        }
     }
 
     private fun login(mobileNumber: String, password: Int){
@@ -45,17 +58,29 @@ class LoginFragment : Fragment() {
                 when(it){
                     is State.Error -> {
                         Log.d(TAG, "login: ERROR " +it.data)
+                        showSnackBar(getString(R.string.makeSureFields))
                     }
                     is State.Loading -> {
                         Log.d(TAG, "login: Loading")
                     }
                     is State.Success -> {
                         Log.d(TAG, "login: SUCCESS " + it.data)
-                        sharedPref.saveToken(it.data!!.Token)
+                        if (it.data!!.Success){
+                            sharedPref.saveToken(it.data.Token)
+                            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToPayrollFragment())
+                        } else{
+                            if (isEnglish())
+                                showSnackBar(it.data.EnglishMessage)
+                            else
+                                showSnackBar(it.data.ArabicMessage)
+                        }
                     }
                 }
             }
         }
+    }
+    private fun showSnackBar(msg: String){
+        Snackbar.make(requireView(), msg, Snackbar.LENGTH_LONG).show()
     }
     companion object {
         private const val TAG = "LoginFragment"

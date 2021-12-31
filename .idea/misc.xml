@@ -6,8 +6,9 @@
         <entry key="app/src/main/res/drawable/divider.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/table_background.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/da.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/ds.xml" value="0.19322916666666667" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_payroll.xml" value="0.18" />
       </map>
     </option>

@@ -9,4 +9,9 @@
     <string name="n">م</string>
     <string name="item">بند</string>
     <string name="value">القيمه</string>
+    <string name="loginToContiue">برجاء تسجيل الدخول</string>
+    <string name="mobileNumber">رقم الهاتف</string>
+    <string name="password">الرقم السري</string>
+    <string name="makeSureFields">تأكد من ادخال بياناتك الصحيحه</string>
+    <string name="login">تسجيل الدخول</string>
 </resources>

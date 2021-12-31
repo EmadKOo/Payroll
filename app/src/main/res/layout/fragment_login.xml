@@ -1,21 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/whiteBackground"
         tools:context=".presentaion.fragments.LoginFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/loginTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo"
+            android:gravity="center"
+            android:text="@string/loginToContiue"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobileNumLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:hint="@string/mobileNumber"
+            app:endIconMode="clear_text"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:hintEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/loginTV">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumberET"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="01068962997"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:hint="@string/password"
+            app:endIconMode="password_toggle"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:hintEnabled="true"
+            app:layout_constraintTop_toBottomOf="@id/mobileNumLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwprdET"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberPassword"
+                android:text="12345678"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:backgroundTint="@color/blue"
+            app:cornerRadius="@dimen/_6sdp"
+            android:text="@string/login"
+            android:paddingVertical="@dimen/_8sdp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

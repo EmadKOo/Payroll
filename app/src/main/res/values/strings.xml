@@ -9,4 +9,9 @@
     <string name="n">n</string>
     <string name="item">Item</string>
     <string name="value">Value</string>
+    <string name="loginToContiue">Login to continue</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="makeSureFields">Make sure that you entered your correct info</string>
 </resources>
