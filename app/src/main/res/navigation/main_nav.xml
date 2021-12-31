@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.emad.payroll.presentaion.fragments.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_payrollFragment"
+            app:destination="@id/payrollFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/payrollFragment"
+        android:name="com.emad.payroll.presentaion.fragments.PayrollFragment"
+        android:label="PayrollFragment" />
 </navigation>

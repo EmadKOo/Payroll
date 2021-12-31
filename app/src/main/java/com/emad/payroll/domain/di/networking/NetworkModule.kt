@@ -1,9 +1,11 @@
 package com.emad.payroll.domain.di
 
 import android.content.Context
+import android.util.Log
 import com.emad.payroll.BuildConfig
 import com.emad.payroll.data.remote.ApiService
 import com.emad.payroll.utils.NetworkHelper
+import com.emad.payroll.utils.SharedPreferencesUtils
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +19,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Qualifier
 import javax.inject.Singleton
@@ -25,6 +28,7 @@ import kotlin.coroutines.CoroutineContext
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
     @Singleton
     @Provides
     fun provideRetrofit(client: OkHttpClient, @BaseUrl baseUrl: String): Retrofit {
@@ -115,4 +119,5 @@ object NetworkModule {
     fun provideCoroutineContext(): CoroutineContext {
         return Dispatchers.IO
     }
+
 }

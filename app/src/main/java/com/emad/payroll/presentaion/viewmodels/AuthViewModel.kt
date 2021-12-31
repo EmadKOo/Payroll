@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.emad.payroll.data.model.Employer
 import com.emad.payroll.data.model.requests.LoginRequest
-import com.emad.payroll.data.usecases.LoginUsecase
+import com.emad.payroll.data.usecases.login.LoginUsecase
 import com.emad.payroll.utils.State
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,13 +26,6 @@ class AuthViewModel @Inject constructor(private val loginUsecase: LoginUsecase):
             _loginStateFlow.emit(State.Success(loginUsecase.invoke(loginRequest)))
         }catch (ex: Exception){
             _loginStateFlow.emit(State.Error(ex.localizedMessage))
-            Log.d(TAG, "login: " + ex.cause)
-            Log.d(TAG, "login: " + ex.message)
-            Log.d(TAG, "login: " + ex.stackTrace)
-            Log.d(TAG, "login: " + ex.localizedMessage)
         }
     }
-companion object{
-    private const val TAG = "AuthViewModel"
-}
 }
